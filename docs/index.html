@@ -10,7 +10,7 @@
 
 <body>
 	Please copy this script into your bookmark and trigger it on the page to enable 2 lines.
-	<a href="javascript:$.get('//raw.githubusercontent.com/JamieZMZhang/wol-2lines/master/docs/index.js',function(data){localStorage._translate=data;eval(data)},'text').error(function(){if(localStorage._translate)eval(localStorage._translate)});">Script</a>
+	<a href="javascript:fetch('//raw.githubusercontent.com/JamieZMZhang/wol-2lines/master/docs/index.js').then(function(data){localStorage._translate=data;eval(data)},'text').catch(function(){if(localStorage._translate)eval(localStorage._translate)});">Script</a>
 </body>
 
 </html>

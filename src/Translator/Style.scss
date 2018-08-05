@@ -1,0 +1,22 @@
+jwd {
+	display: inline-block;
+	text-indent: 0
+}
+
+jwd + jwd {
+	margin-left: 0.25em;
+}
+
+article a:not(.ni):hover {
+	text-decoration: none;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+en {
+	display: block;
+	color: #00f;
+	margin-bottom: -.6em;
+	font-size: .6em;
+	user-select: none;
+}

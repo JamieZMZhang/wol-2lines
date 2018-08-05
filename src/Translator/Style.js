@@ -1,0 +1,1 @@
+exports.style = require('./Style.scss');
