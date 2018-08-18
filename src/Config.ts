@@ -7,8 +7,8 @@ class Config {
 			pubCode: 'f',
 		},
 		in: {
-			langCode: 'in',
-			pubCode: 'id',
+			langCode: 'id',
+			pubCode: 'in',
 		},
 		tg: {
 			langCode: 'tl',
