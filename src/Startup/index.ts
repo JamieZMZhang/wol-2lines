@@ -19,7 +19,7 @@ export class Startup {
 
 		theFrame.onload = () => {
 			new Translator(theFrame.contentDocument!);
-			window.history.pushState(null, undefined, theFrame.contentWindow!.location.href);
+			window.history.pushState(null, '', theFrame.contentWindow!.location.href);
 		};
 	}
 }

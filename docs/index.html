@@ -6,11 +6,42 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Wol 2lines</title>
+	<style>
+		textarea {
+			display: block;
+			background: #ededed;
+			width: 70%;
+			padding: 1.3em 5%;
+			margin: 10%;
+			margin-top: 0.5em;
+			height: auto;
+			overflow: visible;
+		}
+	</style>
 </head>
 
 <body>
-	Please copy this script into your bookmark and trigger it on the page to enable 2 lines.
-	<a href="javascript:fetch('//raw.githubusercontent.com/JamieZMZhang/wol-2lines/master/docs/index.js').then(response=>{response.text().then(data=>{localStorage._translate=data;eval(data);})}).catch(()=>{if(localStorage._translate)eval(localStorage._translate)});">Script</a>
+	<p>
+		Please copy this script into your bookmark and trigger it on the page to enable 2 lines.<br />
+		<a href="javascript:fetch('//raw.githubusercontent.com/JamieZMZhang/wol-2lines/master/docs/index.js').then(response=>{response.text().then(data=>{localStorage._translate=data;eval(data);})}).catch(()=>{if(localStorage._translate)eval(localStorage._translate)});">Script</a>
+		<textarea readonly>javascript:fetch('//raw.githubusercontent.com/JamieZMZhang/wol-2lines/master/docs/index.js').then(response=>{response.text().then(data=>{localStorage._translate=data;eval(data);})}).catch(()=>{if(localStorage._translate)eval(localStorage._translate)});</textarea>
+	</p>
+	<p>
+		使用中文，請複製以下語法進Chrome的書籤<br />
+		<a href="javascript:window.targetLang={langCode:'ch',pubCoce:'zh'};fetch('//raw.githubusercontent.com/JamieZMZhang/wol-2lines/master/docs/index.js').then(response=>{response.text().then(data=>{localStorage._translate=data;eval(data);})}).catch(()=>{if(localStorage._translate)eval(localStorage._translate)});">Script</a>
+		<textarea readonly>javascript:window.targetLang={langCode:'ch',pubCoce:'zh'};fetch('//raw.githubusercontent.com/JamieZMZhang/wol-2lines/master/docs/index.js').then(response=>{response.text().then(data=>{localStorage._translate=data;eval(data);})}).catch(()=>{if(localStorage._translate)eval(localStorage._translate)});</textarea>
+	</p>
+
+	<script>
+		function copy(event) {
+			event.target.select();
+			document.execCommand('copy');
+		}
+		const codes = Array.from(document.querySelectorAll('textarea'));
+		codes.forEach(c => {
+			c.addEventListener('click', copy);
+		});
+	</script>
 </body>
 
 </html>

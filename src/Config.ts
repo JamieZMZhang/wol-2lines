@@ -16,14 +16,15 @@ class Config {
 		},
 	};
 
-	public sourceLang: LangObj | undefined;
-	public targetLang: LangObj = {
+	public sourceLang: LangObj;
+	public targetLang: LangObj = (window as any).targetLang || {
 		langCode: 'en',
 		pubCode: 'e',
 	};
 
 	constructor() {
-		const currentPubCode = /lp-(\w+)/.exec(window.location.pathname)![1];
+		const langCodes = /\/lp-(\w+)(?:.*\/lp-(\w+))?/.exec(window.location.pathname)!;
+		const currentPubCode = langCodes[2] || langCodes[1];
 		this.sourceLang = Config.Langs[currentPubCode];
 	}
 }
